@@ -1,0 +1,93 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  padding: 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-header {
+  background-color: #cfbaa2;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  padding: 15px;
+}
+
+.btn-add-order {
+  padding: 10px 20px;
+  background-color: #c6a686;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-add-order:hover {
+  background-color: #8e735d;
+}
+
+.table th, .table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table th {
+  background-color: #cfbaa2;
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 5px 10px;
+  background-color: #c6a686;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background-color: #8e735d;
+}
+
+/* Modal Styling */
+.modal-header {
+  background-color: #cfbaa2;
+  color: white;
+}
+
+.modal-body input, .modal-body select, .modal-body textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-footer button {
+  background-color: #c6a686;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.modal-footer button:hover {
+  background-color: #8e735d;
+}

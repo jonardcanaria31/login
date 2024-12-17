@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+}
+
+.container {
+    background: #fff;
+    width: 450px;
+    padding: 2rem 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+form {
+    margin: 0 1rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {    
+    position: absolute;
+    left: 1rem;
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem; /* Adjust padding to align text with the icon */
+    border: none;
+    border-bottom: 1px solid #757575;
+    font-size: 1rem;
+    color: #333;
+    background: transparent;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-bottom: 2px solid hsl(327, 90%, 28%);
+}
+
+label {
+    position: absolute;
+    left: 2.5rem; /* Matches the left padding of input */
+    font-size: 1rem;
+    color: #757575;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+    top: -1.5rem;
+    font-size: 0.85rem;
+    color: hsl(327, 90%, 28%);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0;
+    border-radius: 5px;
+    border: none;
+    background: rgb(125, 125, 235);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #07001f;
+}
+.links {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.links p {
+    font-size: 0.95rem;
+    color: #757575;
+    margin: 0;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(125, 125, 235);
+    cursor: pointer;
+    padding: 0;
+    margin-left: 5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.link-button:hover {
+    color: hsl(327, 90%, 28%);
+    text-shadow: 0px 0px 5px rgba(125, 125, 235, 0.7);
+    text-decoration: underline;
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0;
+    border-radius: 50px; /* Rounded edges for a modern look */
+    border: none;
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient background */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.btn:active {
+    transform: translateY(0); /* Reset position when clicked */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow when active */
+}
+.links button {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 20px; /* Rounded edges for a clean and modern look */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Warm gradient */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    text-align: center;
+    text-decoration: none; /* Removes underline for button-like appearance */
+}
+
+.links button:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Adds lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.links button:active {
+    transform: translateY(0); /* Reset the button position when clicked */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow on active click */
+}

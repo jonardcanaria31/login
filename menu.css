@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.flavors-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.flavors-section h2 {
+  font-size: 3rem;
+  color: #7f5539;
+  margin-bottom: 20px;
+}
+
+.flavors-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%; /* Ensure the container doesn't overflow */
+  max-width: 1200px; /* Set a max width for the container */
+  padding: 20px;
+}
+
+.flavor-item {
+  background-color: #ffad33;
+  padding: 10px;
+  border-radius: 8px;
+  width: 250px; /* Fixed width to maintain consistency */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+  transition: transform 0.3s ease; /* Smooth scaling animation */
+}
+
+.flavor-item:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.flavor-item img {
+  width: 80%; /* Fixed width for the images */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px; /* Add consistent space between image and label */
+  transition: transform 0.3s ease; /* Smooth scaling animation */
+}
+
+.flavor-item img:hover {
+  transform: scale(1.1); /* Grows the image by 10% */
+}
+
+.flavor-item p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: auto; /* Keep label consistently aligned below */
+  color: #333;
+  text-align: center;
+  min-height: 30px; /* Uniform height for labels */
+  line-height: 30px; /* Vertically center the label */
+}
+
+/* Specific Style Adjustments */
+.middle-box {
+  background-color: #FF006E; /* Bright pink for the middle box */
+}
+
+.third-box {
+  background-color: #F8A45C; /* Bright pink for the middle box */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .flavors-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flavor-item {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+.center-pasta,
+.center-iced {
+  display: block;
+  margin: 40px auto; /* Centers horizontally */
+  object-fit: contain; /* Keeps the whole image visible */
+  width: 80%; /* Adjust width to fit within container */
+  max-height: 250px; /* Restrict height for consistency */
+}
+
+/* Navbar Styles (fixed at the top and keeps its position) */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #EDE0D4; /* Original navbar color */
+  padding: 8px 0; /* Slightly increased padding for a softer look */
+  display: flex;
+  justify-content: space-between; /* Centers the logo and aligns the nav items */
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  z-index: 10; /* Keeps navbar on top of other content */
+}
+
+/* Left Navigation */
+.left-nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-nav li {
+  display: inline-block;
+}
+
+.left-nav li a {
+  color: #333;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.left-nav li a:hover {
+  color: #FF9900; /* Hover effect */
+  background-color: #f4f4f4;
+}
+
+/* Logo and Menu container */
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Space between logo and Home */
+}
+
+.logo img {
+  max-width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FF9900;
+}
+
+/* Right Navigation */
+.right-nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.right-nav li {
+  display: inline-block;
+}
+
+.right-nav li a {
+  color: #333;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.right-nav li a:hover {
+  color: #FF9900; /* Hover effect */
+  background-color: #f4f4f4;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  background: #333;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+}
+
+.nav-link {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: red;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.section-three,
+.section-four {
+  height: 100vh;
+}
