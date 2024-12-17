@@ -2,17 +2,9 @@
 session_start();
 
 
-// Database connection and queries
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$dbname = "login"; 
+include "connect.php";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Fetching data for the dashboard
 $totalOrdersQuery = "SELECT COUNT(*) AS total_orders FROM orders";

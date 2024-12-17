@@ -2,18 +2,8 @@
 session_start();
 
 // Database connection
-$servername = "localhost"; // Your server name (e.g., localhost, or IP address)
-$username = "root"; // Your database username
-$password = ""; // Your database password
-$dbname = "login"; // Your database name
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "connect.php";
 
 // Fetch customer data with total price and status
 $query = "SELECT u.id AS user_id, u.fName, u.lName, o.created_at, o.total_price, o.status

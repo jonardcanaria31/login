@@ -1,41 +1,35 @@
 <?php
-// database.php - Database connection
-$servername = "localhost"; // Your server name (e.g., localhost, or IP address)
-$username = "root"; // Your database username
-$password = ""; // Your database password
-$dbname = "login"; // Your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+// Include the database connection
+include 'connect.php';
 
 // Handle the form submission for editing the customer details
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['user_id'])) {
-  $userId = $_POST['user_id'];
-  $email = $_POST['email'];
-  $mobile = $_POST['mobile'];
-  $password = $_POST['password'];
+    $userId = $_POST['user_id'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $password = $_POST['password'];
 
-  if ($password) {
-    $password = password_hash($password, PASSWORD_DEFAULT);  // Hash the password if it's provided
-  }
+    if ($password) {
+        $password = password_hash($password, PASSWORD_DEFAULT);  // Hash the password if it's provided
+    }
 
-  $updateQuery = "UPDATE users SET email = ?, mobile = ?, password = ? WHERE id = ?";
-  $stmt = $conn->prepare($updateQuery);
-  $stmt->bind_param("sssi", $email, $mobile, $password, $userId);
-  $stmt->execute();
-  
-  if ($stmt->affected_rows > 0) {
-    echo "<script>alert('User updated successfully');</script>";
-  } else {
-    echo "<script>alert('Error updating User');</script>";
-  }
-  
-  $stmt->close();
+    // Check if the connection is not null
+    if ($conn) {
+        $updateQuery = "UPDATE users SET email = ?, mobile = ?, password = ? WHERE id = ?";
+        $stmt = $conn->prepare($updateQuery);
+        $stmt->bind_param("sssi", $email, $mobile, $password, $userId);
+        $stmt->execute();
+        
+        if ($stmt->affected_rows > 0) {
+            echo "<script>alert('User updated successfully');</script>";
+        } else {
+            echo "<script>alert('Error updating User');</script>";
+        }
+        
+        $stmt->close();
+    } else {
+        die("Database connection error.");
+    }
 }
 
 // Search query
@@ -71,13 +65,13 @@ $conn->close();
       <li><a href="Dashboard.php">Dashboard</a></li>
       <li><a href="Product.php">Products</a></li>
       <li><a href="Orders.php">Orders</a></li>
-      <li><a href="Customer.php"  class="active">Users</a></li>
+      <li><a href="Customer.php" class="active">Users</a></li>
       <li><a href="#">Log out</a></li>
       <li><a href="../index.php">Go to Main Store</a></li>
     </ul>
   </aside>
 
-  <!--Main Content-->
+  <!-- Main Content -->
   <div class="container">
     <!-- Customer Management Card -->
     <div class="card">
@@ -104,7 +98,6 @@ $conn->close();
           </thead>
           <tbody>
             <?php
-            // Fetching customers from the database based on search
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
