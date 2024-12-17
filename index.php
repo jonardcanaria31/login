@@ -7,7 +7,7 @@ include("connect.php"); // Include database connection
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landingpage</title>
+    <title>Goffee</title>
 
     <!-- Linking CSS -->
     <link rel="stylesheet" href="landingpage.css">
@@ -64,10 +64,10 @@ include("connect.php"); // Include database connection
             <button class="order-btn" id="orderButton" data-logged-in="<?php echo isset($_SESSION['email']) ? 'true' : 'false'; ?>">Order Now</button>
         </div>
 
-        <div class="carousel-section">
+        <div class="carousel-section" >
             <div class="carousel">
                 <div class="carousel-images">
-                    <img src="images/matcha.jpg" alt="Match Coffee">
+                    <img src="images/matcha.jpg" alt="Match Coffee" class="active">
                     <img src="images/sample.jpg" alt="Sample Coffee">
                     <img src="images/shopPic.jpg" alt="Shop Picture">
                     <img src="images/frontpic.jpg" alt="Shop Picture">
@@ -160,12 +160,31 @@ include("connect.php"); // Include database connection
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const orderButton = document.getElementById("orderButton");
-            const menuSection = document.getElementById("menu");
-            const loggedIn = orderButton.dataset.loggedIn === 'true';
+            const carousel = document.querySelector('.carousel-images');
+            let currentIndex = 0;
+            const images = carousel.querySelectorAll('img');
+
+            function showImage(index) {
+                // Hide all images first
+                images.forEach(img => img.style.display = 'none');
+                images[index].style.display = 'block';
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            // Automatic carousel functionality
+            setInterval(nextImage, 3000); // Change image every 3 seconds
+
+            // Initially show the first image
+            showImage(currentIndex);
 
             orderButton.addEventListener("click", function () {
+                const loggedIn = orderButton.dataset.loggedIn === 'true';
                 if (loggedIn) {
-                    menuSection.scrollIntoView({ behavior: "smooth" });
+                    document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
                 } else {
                     window.location.href = "login.php";
                 }

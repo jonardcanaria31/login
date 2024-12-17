@@ -1085,6 +1085,43 @@ nav a.active {
   padding: 10px 20px;
   cursor: pointer;
 }
+.carousel-section {
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  flex: 1; /* Occupies the entire height and width of the container */
+  margin-right: 20px; /* Space mula sa static images */
+}
+
+.carousel-images img {
+  display: none; /* Hide all images initially */
+  width: 100%; /* Full width ng carousel image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.carousel-images img.active {
+  display: block; /* Show the currently active image */
+}
+
+.flavors-container {
+  display: flex; /* Para sa layout sa right side ng mga flavor items */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Align items sa kaliwa ng page */
+}
+
+.flavor-item {
+  flex: 1 1 calc(33.33% - 20px); /* Gawing grid layout for 3 items */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.flavor-item img {
+  width: 100%; /* Full width ng flavor image */
+  height: auto; /* Maintain aspect ratio */
+}
 
 
 
